@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const DAYS = ["سب", "جم", "خم", "أرب", "ثل", "إث", "أح"];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const MAY_2026 = [
   [null, null, null, null, null, 1, 2],
   [3, 4, 5, 6, 7, 8, 9],
@@ -11,6 +11,7 @@ const MAY_2026 = [
 ];
 
 const HIGHLIGHT_DAY = 6;
+const slowFade = { duration: 1.2, ease: "easeOut" as const };
 
 const CalendarSection = () => {
   return (
@@ -21,9 +22,9 @@ const CalendarSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={slowFade}
         >
-          احفظ الموعد
+          Save the Date
         </motion.h2>
 
         <motion.p
@@ -31,9 +32,9 @@ const CalendarSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ ...slowFade, delay: 0.3 }}
         >
-          مايو ٢٠٢٦
+          May 2026
         </motion.p>
 
         <motion.div
@@ -41,9 +42,8 @@ const CalendarSection = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
         >
-          {/* Header */}
           <div className="grid grid-cols-7 gap-1 mb-3">
             {DAYS.map((day) => (
               <div key={day} className="text-center font-display text-burgundy-deep text-xs font-bold py-1">
@@ -52,7 +52,6 @@ const CalendarSection = () => {
             ))}
           </div>
 
-          {/* Days grid */}
           {MAY_2026.map((week, wi) => (
             <div key={wi} className="grid grid-cols-7 gap-1">
               {week.map((day, di) => (
@@ -79,9 +78,9 @@ const CalendarSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ ...slowFade, delay: 0.8 }}
         >
-          ✦ من ٥ مساءً حتى ١٢ صباحاً ✦
+          ✦ From 5:00 PM to 12:00 AM ✦
         </motion.p>
       </div>
     </section>
