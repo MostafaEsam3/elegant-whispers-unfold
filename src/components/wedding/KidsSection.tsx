@@ -1,0 +1,86 @@
+import { motion } from "framer-motion";
+import kidsPhoto from "@/assets/kids-photo.jpeg";
+
+const KidsSection = () => {
+  return (
+    <section className="py-20 px-4 bg-burgundy-gradient relative overflow-hidden">
+      {/* Floating hearts */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute text-gold opacity-20 pointer-events-none"
+          style={{
+            left: `${15 + Math.random() * 70}%`,
+            top: `${10 + Math.random() * 80}%`,
+            fontSize: `${14 + Math.random() * 20}px`,
+          }}
+          animate={{
+            y: [-10, 10, -10],
+            opacity: [0.1, 0.3, 0.1],
+            rotate: [-5, 5, -5],
+          }}
+          transition={{
+            duration: 4 + Math.random() * 2,
+            repeat: Infinity,
+            delay: Math.random() * 2,
+          }}
+        >
+          ♥
+        </motion.div>
+      ))}
+
+      <div className="max-w-lg mx-auto text-center">
+        <motion.h2
+          className="font-script text-gold text-3xl md:text-4xl mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          قصتنا بدأت من زمان
+        </motion.h2>
+
+        <motion.div
+          className="relative mx-auto w-72 md:w-80"
+          initial={{ opacity: 0, scale: 0.85 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          {/* Photo frame */}
+          <div className="relative rounded-xl overflow-hidden gold-border gold-glow">
+            <img
+              src={kidsPhoto}
+              alt="Marwa & Usief as children"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/30 to-transparent" />
+          </div>
+
+          {/* Decorative pin */}
+          <motion.div
+            className="absolute -top-3 left-1/2 -translate-x-1/2 text-gold text-2xl"
+            animate={{ rotate: [-3, 3, -3] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            📌
+          </motion.div>
+        </motion.div>
+
+        <motion.p
+          className="mt-8 font-body text-cream text-lg leading-relaxed"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          من أحلام الطفولة... إلى حقيقة العمر
+        </motion.p>
+      </div>
+    </section>
+  );
+};
+
+export default KidsSection;
