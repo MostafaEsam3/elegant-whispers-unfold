@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import kidsPhoto from "@/assets/kids-photo.jpeg";
 
+const slowFade = { duration: 1.2, ease: "easeOut" as const };
+
 const KidsSection = () => {
   return (
     <section className="py-20 px-4 bg-burgundy-gradient relative overflow-hidden">
@@ -20,7 +22,7 @@ const KidsSection = () => {
             rotate: [-5, 5, -5],
           }}
           transition={{
-            duration: 4 + Math.random() * 2,
+            duration: 5 + Math.random() * 3,
             repeat: Infinity,
             delay: Math.random() * 2,
           }}
@@ -35,9 +37,9 @@ const KidsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={slowFade}
         >
-          قصتنا بدأت من زمان
+          Our Story Began Long Ago
         </motion.h2>
 
         <motion.div
@@ -45,7 +47,7 @@ const KidsSection = () => {
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
         >
           {/* Photo frame */}
           <div className="relative rounded-xl overflow-hidden gold-border gold-glow">
@@ -55,7 +57,6 @@ const KidsSection = () => {
               className="w-full h-auto"
               loading="lazy"
             />
-            {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/30 to-transparent" />
           </div>
 
@@ -63,7 +64,7 @@ const KidsSection = () => {
           <motion.div
             className="absolute -top-3 left-1/2 -translate-x-1/2 text-gold text-2xl"
             animate={{ rotate: [-3, 3, -3] }}
-            transition={{ duration: 3, repeat: Infinity }}
+            transition={{ duration: 4, repeat: Infinity }}
           >
             📌
           </motion.div>
@@ -74,9 +75,9 @@ const KidsSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ ...slowFade, delay: 0.6 }}
         >
-          من أحلام الطفولة... إلى حقيقة العمر
+          From childhood dreams... to a lifetime together
         </motion.p>
       </div>
     </section>
