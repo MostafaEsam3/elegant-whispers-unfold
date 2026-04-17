@@ -8,14 +8,12 @@ import LocationSection from "@/components/wedding/LocationSection";
 import DressCodeSection from "@/components/wedding/DressCodeSection";
 import RsvpSection from "@/components/wedding/RsvpSection";
 import FooterSection from "@/components/wedding/FooterSection";
-import MusicPlayer from "@/components/wedding/MusicPlayer";
 
 const Index = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">
-      <MusicPlayer shouldPlay={true} />
       <AnimatePresence mode="wait">
         {!envelopeOpened ? (
           <motion.div key="hero" exit={{ opacity: 0, y: -50 }} transition={{ duration: 1 }}>
