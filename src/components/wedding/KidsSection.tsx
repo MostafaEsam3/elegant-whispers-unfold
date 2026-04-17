@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import kidsPhoto from "@/assets/kids-photo.jpeg";
 
-const slowFade = { duration: 1.2, ease: "easeOut" as const };
+const slowFade = { duration: 1.8, ease: "easeOut" as const };
 
 const KidsSection = () => {
   return (
     <section className="py-20 px-4 bg-burgundy-gradient relative overflow-hidden">
-      {/* Floating hearts */}
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
@@ -16,16 +15,8 @@ const KidsSection = () => {
             top: `${10 + Math.random() * 80}%`,
             fontSize: `${14 + Math.random() * 20}px`,
           }}
-          animate={{
-            y: [-10, 10, -10],
-            opacity: [0.1, 0.3, 0.1],
-            rotate: [-5, 5, -5],
-          }}
-          transition={{
-            duration: 5 + Math.random() * 3,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-          }}
+          animate={{ y: [-10, 10, -10], opacity: [0.1, 0.3, 0.1], rotate: [-5, 5, -5] }}
+          transition={{ duration: 5 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2 }}
         >
           ♥
         </motion.div>
@@ -39,7 +30,7 @@ const KidsSection = () => {
           viewport={{ once: true }}
           transition={slowFade}
         >
-          Our Story Began Long Ago
+          قصتنا بدأت من زمان
         </motion.h2>
 
         <motion.div
@@ -47,20 +38,13 @@ const KidsSection = () => {
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
+          transition={{ duration: 2, ease: "easeOut" }}
         >
-          {/* Photo frame */}
           <div className="relative rounded-xl overflow-hidden gold-border gold-glow">
-            <img
-              src={kidsPhoto}
-              alt="Marwa & Usief as children"
-              className="w-full h-auto"
-              loading="lazy"
-            />
+            <img src={kidsPhoto} alt="مروة ويوسف في الطفولة" className="w-full h-auto" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/30 to-transparent" />
           </div>
 
-          {/* Decorative pin */}
           <motion.div
             className="absolute -top-3 left-1/2 -translate-x-1/2 text-gold text-2xl"
             animate={{ rotate: [-3, 3, -3] }}
@@ -75,9 +59,9 @@ const KidsSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 0.6 }}
+          transition={{ ...slowFade, delay: 0.8 }}
         >
-          From childhood dreams... to a lifetime together
+          من أحلام الطفولة... إلى عُمرٍ سويّاً
         </motion.p>
       </div>
     </section>
