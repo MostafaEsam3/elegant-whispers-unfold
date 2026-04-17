@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import envelopeImg from "@/assets/envelope.png";
+import envelopeImg from "@/assets/envelope-hands.png";
 
 const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
   const [isOpened, setIsOpened] = useState(false);
