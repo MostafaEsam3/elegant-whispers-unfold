@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
 const COLORS = [
-  { name: "Black", hsl: "0 0% 10%" },
-  { name: "Dark Burgundy", hsl: "345 50% 20%" },
-  { name: "Maroon", hsl: "0 40% 25%" },
-  { name: "Beige", hsl: "35 25% 75%" },
+  { name: "أسود", hsl: "0 0% 10%" },
+  { name: "نبيتي غامق", hsl: "345 50% 20%" },
+  { name: "خمري", hsl: "0 40% 25%" },
+  { name: "بيج", hsl: "35 25% 75%" },
 ];
 
-const slowFade = { duration: 1.2, ease: "easeOut" as const };
+const slowFade = { duration: 1.8, ease: "easeOut" as const };
 
 const DressCodeSection = () => {
   return (
@@ -20,7 +20,7 @@ const DressCodeSection = () => {
           viewport={{ once: true }}
           transition={slowFade}
         >
-          Dress Code
+          الزي المقترح
         </motion.h2>
 
         <motion.p
@@ -28,11 +28,11 @@ const DressCodeSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 0.3 }}
+          transition={{ ...slowFade, delay: 0.4 }}
         >
-          We kindly ask you to dress in the following colors
+          نتمنى منكم ارتداء الألوان التالية
           <br />
-          to create an elegant and harmonious look together
+          لنخلق معاً إطلالة أنيقة ومتناسقة
         </motion.p>
 
         <motion.div
@@ -40,7 +40,7 @@ const DressCodeSection = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 0.5 }}
+          transition={{ ...slowFade, delay: 0.7 }}
         >
           {COLORS.map((color, i) => (
             <motion.div

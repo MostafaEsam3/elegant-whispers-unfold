@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 
-const slowFade = { duration: 1.2, ease: "easeOut" as const };
+const slowFade = { duration: 1.8, ease: "easeOut" as const };
 
 const FooterSection = () => {
   return (
     <footer className="py-20 px-4 bg-burgundy-gradient relative overflow-hidden">
-      {/* Floating decorations */}
       {["✦", "☽", "✦", "⭐", "✦"].map((char, i) => (
         <motion.div
           key={i}
@@ -16,15 +15,8 @@ const FooterSection = () => {
             fontSize: `${12 + i * 3}px`,
             opacity: 0.15,
           }}
-          animate={{
-            y: [-8, 8, -8],
-            opacity: [0.1, 0.25, 0.1],
-          }}
-          transition={{
-            duration: 4 + i * 0.7,
-            repeat: Infinity,
-            delay: i * 0.5,
-          }}
+          animate={{ y: [-8, 8, -8], opacity: [0.1, 0.25, 0.1] }}
+          transition={{ duration: 4 + i * 0.7, repeat: Infinity, delay: i * 0.5 }}
         >
           {char}
         </motion.div>
@@ -36,7 +28,7 @@ const FooterSection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.4 }}
+          transition={{ duration: 2 }}
         >
           <svg viewBox="0 0 200 140" className="w-40 h-28 mx-auto">
             <rect x="20" y="30" width="160" height="100" rx="6" fill="hsl(40, 30%, 92%)" stroke="hsl(40, 60%, 55%)" strokeWidth="1" />
@@ -53,7 +45,7 @@ const FooterSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 0.3 }}
+          transition={{ ...slowFade, delay: 0.4 }}
         >
           🎀
         </motion.div>
@@ -63,9 +55,9 @@ const FooterSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 0.5 }}
+          transition={{ ...slowFade, delay: 0.7 }}
         >
-          We Can't Wait to See You
+          في انتظاركم بشغف
         </motion.h2>
 
         <motion.div
@@ -73,7 +65,7 @@ const FooterSection = () => {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, delay: 0.7 }}
+          transition={{ duration: 1.6, delay: 1 }}
         />
 
         <motion.p
@@ -81,9 +73,9 @@ const FooterSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 0.9 }}
+          transition={{ ...slowFade, delay: 1.2 }}
         >
-          Marwa & Usief
+          مروة و يوسف
         </motion.p>
 
         <motion.p
@@ -91,9 +83,9 @@ const FooterSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 1.1 }}
+          transition={{ ...slowFade, delay: 1.4 }}
         >
-          2026
+          ٢٠٢٦
         </motion.p>
       </div>
     </footer>

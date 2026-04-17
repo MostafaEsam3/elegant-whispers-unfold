@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
-const slowFade = { duration: 1.2, ease: "easeOut" as const };
+const slowFade = { duration: 1.8, ease: "easeOut" as const };
 
 const LocationSection = () => {
   return (
@@ -14,7 +14,7 @@ const LocationSection = () => {
           viewport={{ once: true }}
           transition={slowFade}
         >
-          Venue
+          مكان الحفل
         </motion.h2>
 
         <motion.div
@@ -22,7 +22,7 @@ const LocationSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 0.3 }}
+          transition={{ ...slowFade, delay: 0.4 }}
         >
           <motion.div
             className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-burgundy-deep mb-4"
@@ -33,10 +33,10 @@ const LocationSection = () => {
           </motion.div>
 
           <h3 className="font-display text-cream text-2xl md:text-3xl font-bold mb-2">
-            Al Qasr
+            القصر
           </h3>
-          <p className="font-body text-cream-dark text-lg mb-1">The Palace</p>
-          <p className="font-body text-muted-foreground text-base">Sohag, Egypt</p>
+          <p className="font-body text-cream-dark text-lg mb-1">قاعة الأفراح</p>
+          <p className="font-body text-muted-foreground text-base">سوهاج، مصر</p>
 
           <div className="separator-ornament w-24 mx-auto my-6" />
 
@@ -45,11 +45,11 @@ const LocationSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ ...slowFade, delay: 0.6 }}
+            transition={{ ...slowFade, delay: 0.9 }}
           >
-            We look forward to welcoming you
+            في انتظار حضوركم الكريم
             <br />
-            in an enchanting atmosphere for this joyful occasion
+            في أجواء ساحرة لهذه المناسبة السعيدة
           </motion.p>
         </motion.div>
       </div>

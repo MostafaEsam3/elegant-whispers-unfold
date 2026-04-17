@@ -12,7 +12,6 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-burgundy-gradient relative overflow-hidden">
-      {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => (
           <motion.div
@@ -23,15 +22,8 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
               top: `${Math.random() * 100}%`,
               fontSize: `${8 + Math.random() * 16}px`,
             }}
-            animate={{
-              opacity: [0.1, 0.3, 0.1],
-              scale: [0.8, 1.2, 0.8],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 3,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
+            animate={{ opacity: [0.1, 0.3, 0.1], scale: [0.8, 1.2, 0.8] }}
+            transition={{ duration: 4 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2 }}
           >
             ✦
           </motion.div>
@@ -39,34 +31,31 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Title */}
         <motion.h1
           className="font-script text-gold text-4xl md:text-6xl mb-12 text-center"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 2, ease: "easeOut" }}
         >
-          You're Invited
+          أنتم مدعوون
         </motion.h1>
 
-        {/* Envelope image */}
         <motion.div
           className="relative cursor-pointer"
           onClick={handleOpen}
           whileHover={!isOpened ? { scale: 1.05, y: -8 } : {}}
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 1.8, delay: 0.5, ease: "easeOut" }}
         >
           <motion.img
             src={envelopeImg}
-            alt="Wedding envelope with U&M wax seal"
+            alt="ظرف زفاف ذهبي"
             className="w-64 md:w-80 h-auto drop-shadow-2xl"
             animate={isOpened ? { scale: 1.1, opacity: 0, y: -60 } : {}}
             transition={{ duration: 1.2, ease: "easeInOut" }}
           />
 
-          {/* Card sliding out */}
           <AnimatePresence>
             {isOpened && (
               <motion.div
@@ -75,15 +64,14 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
                 animate={{ y: -180, opacity: 1 }}
                 transition={{ duration: 1.4, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                <p className="font-script text-burgundy-deep text-2xl md:text-3xl">Marwa & Usief</p>
+                <p className="font-script text-burgundy-deep text-2xl md:text-3xl">مروة و يوسف</p>
                 <div className="separator-ornament w-24 my-2" />
-                <p className="font-body text-burgundy text-sm">06 . 05 . 2026</p>
+                <p className="font-body text-burgundy text-sm">٦ . ٥ . ٢٠٢٦</p>
               </motion.div>
             )}
           </AnimatePresence>
         </motion.div>
 
-        {/* Click prompt */}
         <AnimatePresence>
           {!isOpened && (
             <motion.p
@@ -91,10 +79,10 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: [0.4, 1, 0.4] }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               onClick={handleOpen}
             >
-              Tap to Open the Invitation
+              اضغط لفتح الدعوة
             </motion.p>
           )}
         </AnimatePresence>

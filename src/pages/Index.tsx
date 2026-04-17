@@ -6,17 +6,19 @@ import KidsSection from "@/components/wedding/KidsSection";
 import CalendarSection from "@/components/wedding/CalendarSection";
 import LocationSection from "@/components/wedding/LocationSection";
 import DressCodeSection from "@/components/wedding/DressCodeSection";
-import WishesSection from "@/components/wedding/WishesSection";
+import RsvpSection from "@/components/wedding/RsvpSection";
 import FooterSection from "@/components/wedding/FooterSection";
+import MusicPlayer from "@/components/wedding/MusicPlayer";
 
 const Index = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir="rtl">
+      <MusicPlayer shouldPlay={true} />
       <AnimatePresence mode="wait">
         {!envelopeOpened ? (
-          <motion.div key="hero" exit={{ opacity: 0, y: -50 }} transition={{ duration: 0.8 }}>
+          <motion.div key="hero" exit={{ opacity: 0, y: -50 }} transition={{ duration: 1 }}>
             <HeroSection onOpen={() => setEnvelopeOpened(true)} />
           </motion.div>
         ) : (
@@ -24,14 +26,14 @@ const Index = () => {
             key="content"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.4 }}
           >
             <InvitationCard />
             <KidsSection />
             <CalendarSection />
             <LocationSection />
             <DressCodeSection />
-            <WishesSection />
+            <RsvpSection />
             <FooterSection />
           </motion.div>
         )}

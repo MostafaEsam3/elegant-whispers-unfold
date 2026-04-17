@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const slowFade = { duration: 1.2, ease: "easeOut" as const };
+const slowFade = { duration: 1.8, ease: "easeOut" as const };
 
 const InvitationCard = () => {
   return (
@@ -10,10 +10,9 @@ const InvitationCard = () => {
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.4, ease: "easeOut" }}
+        transition={{ duration: 2, ease: "easeOut" }}
       >
         <div className="bg-cream rounded-lg p-8 md:p-12 gold-glow gold-border relative">
-          {/* Corner decorations */}
           {["top-3 left-3", "top-3 right-3", "bottom-3 left-3", "bottom-3 right-3"].map((pos, i) => (
             <div
               key={i}
@@ -33,9 +32,9 @@ const InvitationCard = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ ...slowFade, delay: 0.3 }}
+              transition={{ ...slowFade, delay: 0.4 }}
             >
-              Marwa & Usief
+              مروة و يوسف
             </motion.h2>
 
             <motion.div
@@ -43,7 +42,7 @@ const InvitationCard = () => {
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: 0.5 }}
+              transition={{ duration: 1.6, delay: 0.7 }}
             />
 
             <motion.p
@@ -51,11 +50,11 @@ const InvitationCard = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ ...slowFade, delay: 0.7 }}
+              transition={{ ...slowFade, delay: 1 }}
             >
-              With all our love and joy, we invite you
+              بكل الحب والفرح، ندعوكم
               <br />
-              to share the most beautiful day of our lives
+              لمشاركتنا أجمل يوم في حياتنا
             </motion.p>
 
             <motion.div
@@ -63,13 +62,13 @@ const InvitationCard = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ ...slowFade, delay: 1 }}
+              transition={{ ...slowFade, delay: 1.3 }}
             >
               <p className="font-display text-burgundy-deep text-lg font-semibold tracking-wider">
-                May 6, 2026
+                ٦ مايو ٢٠٢٦
               </p>
               <p className="font-body text-burgundy-light text-base">
-                From 5:00 PM to 12:00 AM
+                من الساعة ٥ مساءً حتى ١٢ منتصف الليل
               </p>
             </motion.div>
 
@@ -78,10 +77,10 @@ const InvitationCard = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ ...slowFade, delay: 1.3 }}
+              transition={{ ...slowFade, delay: 1.6 }}
             >
               <span className="text-gold text-xl">✦</span>
-              <p className="font-script text-burgundy text-xl">We are honored by your presence</p>
+              <p className="font-script text-burgundy text-xl">يشرفنا حضوركم</p>
               <span className="text-gold text-xl">✦</span>
             </motion.div>
           </div>
