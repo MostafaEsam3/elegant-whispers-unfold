@@ -9,13 +9,13 @@ const KidsSection = () => {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute text-burgundy opacity-25 pointer-events-none"
+          className="absolute text-burgundy-deep pointer-events-none"
           style={{
             left: `${15 + Math.random() * 70}%`,
             top: `${10 + Math.random() * 80}%`,
-            fontSize: `${14 + Math.random() * 20}px`,
+            fontSize: `${16 + Math.random() * 22}px`,
           }}
-          animate={{ y: [-10, 10, -10], opacity: [0.15, 0.35, 0.15], rotate: [-5, 5, -5] }}
+          animate={{ y: [-10, 10, -10], opacity: [0.4, 0.75, 0.4], rotate: [-5, 5, -5] }}
           transition={{ duration: 5 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2 }}
         >
           ♥

@@ -8,14 +8,13 @@ const FooterSection = () => {
       {["✦", "☽", "✦", "✧", "✦"].map((char, i) => (
         <motion.div
           key={i}
-          className="absolute text-burgundy pointer-events-none"
+          className="absolute text-burgundy-deep pointer-events-none"
           style={{
             left: `${10 + i * 20}%`,
             top: `${20 + (i % 2) * 40}%`,
-            fontSize: `${12 + i * 3}px`,
-            opacity: 0.2,
+            fontSize: `${16 + i * 4}px`,
           }}
-          animate={{ y: [-8, 8, -8], opacity: [0.15, 0.3, 0.15] }}
+          animate={{ y: [-8, 8, -8], opacity: [0.5, 0.85, 0.5] }}
           transition={{ duration: 4 + i * 0.7, repeat: Infinity, delay: i * 0.5 }}
         >
           {char}
