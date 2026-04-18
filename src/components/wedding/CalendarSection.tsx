@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const DAYS = ["أحد", "إثن", "ثلا", "أرب", "خمي", "جمع", "سبت"];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const MAY_2026 = [
   [null, null, null, null, null, 1, 2],
   [3, 4, 5, 6, 7, 8, 9],
@@ -13,30 +13,28 @@ const MAY_2026 = [
 const HIGHLIGHT_DAY = 6;
 const slowFade = { duration: 1.8, ease: "easeOut" as const };
 
-const toArabic = (n: number) => n.toString().replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[+d]);
-
 const CalendarSection = () => {
   return (
     <section className="py-20 px-4 bg-burgundy-gradient relative">
       <div className="max-w-sm mx-auto">
         <motion.h2
-          className="font-script text-gold text-3xl md:text-4xl text-center mb-2"
+          className="font-script text-burgundy-deep text-3xl md:text-4xl text-center mb-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={slowFade}
         >
-          احفظوا التاريخ
+          Save the Date
         </motion.h2>
 
         <motion.p
-          className="text-center font-display text-cream text-lg mb-8 tracking-widest"
+          className="text-center font-display text-burgundy text-lg mb-8 tracking-widest"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ ...slowFade, delay: 0.4 }}
         >
-          مايو ٢٠٢٦
+          May 2026
         </motion.p>
 
         <motion.div
@@ -66,7 +64,7 @@ const CalendarSection = () => {
                           : "text-burgundy"
                         }`}
                     >
-                      {toArabic(day)}
+                      {day}
                     </span>
                   )}
                 </div>
@@ -76,13 +74,13 @@ const CalendarSection = () => {
         </motion.div>
 
         <motion.p
-          className="text-center mt-6 font-script text-gold-light text-xl"
+          className="text-center mt-6 font-script text-burgundy text-xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ ...slowFade, delay: 1 }}
         >
-          ✦ من ٥ مساءً حتى ١٢ منتصف الليل ✦
+          ✦ From 5 PM until midnight ✦
         </motion.p>
       </div>
     </section>

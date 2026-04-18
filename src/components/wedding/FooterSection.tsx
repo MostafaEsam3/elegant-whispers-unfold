@@ -5,17 +5,17 @@ const slowFade = { duration: 1.8, ease: "easeOut" as const };
 const FooterSection = () => {
   return (
     <footer className="py-20 px-4 bg-burgundy-gradient relative overflow-hidden">
-      {["✦", "☽", "✦", "⭐", "✦"].map((char, i) => (
+      {["✦", "☽", "✦", "✧", "✦"].map((char, i) => (
         <motion.div
           key={i}
-          className="absolute text-gold pointer-events-none"
+          className="absolute text-burgundy pointer-events-none"
           style={{
             left: `${10 + i * 20}%`,
             top: `${20 + (i % 2) * 40}%`,
             fontSize: `${12 + i * 3}px`,
-            opacity: 0.15,
+            opacity: 0.2,
           }}
-          animate={{ y: [-8, 8, -8], opacity: [0.1, 0.25, 0.1] }}
+          animate={{ y: [-8, 8, -8], opacity: [0.15, 0.3, 0.15] }}
           transition={{ duration: 4 + i * 0.7, repeat: Infinity, delay: i * 0.5 }}
         >
           {char}
@@ -31,33 +31,23 @@ const FooterSection = () => {
           transition={{ duration: 2 }}
         >
           <svg viewBox="0 0 200 140" className="w-40 h-28 mx-auto">
-            <rect x="20" y="30" width="160" height="100" rx="6" fill="hsl(40, 30%, 92%)" stroke="hsl(40, 60%, 55%)" strokeWidth="1" />
-            <path d="M20 30 L100 85 L180 30" fill="none" stroke="hsl(40, 60%, 55%)" strokeWidth="1" />
-            <circle cx="100" cy="95" r="16" fill="hsl(0, 50%, 30%)" stroke="hsl(40, 60%, 55%)" strokeWidth="1" />
-            <text x="100" y="100" textAnchor="middle" fill="hsl(40, 60%, 55%)" fontSize="12" fontFamily="Great Vibes">
-              M&U
+            <rect x="20" y="30" width="160" height="100" rx="6" fill="hsl(40, 35%, 96%)" stroke="hsl(40, 65%, 45%)" strokeWidth="1" />
+            <path d="M20 30 L100 85 L180 30" fill="none" stroke="hsl(40, 65%, 45%)" strokeWidth="1" />
+            <circle cx="100" cy="95" r="16" fill="hsl(0, 55%, 20%)" stroke="hsl(40, 65%, 45%)" strokeWidth="1" />
+            <text x="100" y="100" textAnchor="middle" fill="hsl(40, 65%, 45%)" fontSize="12" fontFamily="Great Vibes">
+              Y&M
             </text>
           </svg>
         </motion.div>
 
-        <motion.div
-          className="text-gold text-3xl mb-6"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ ...slowFade, delay: 0.4 }}
-        >
-          🎀
-        </motion.div>
-
         <motion.h2
-          className="font-script text-gold text-3xl md:text-4xl mb-4"
+          className="font-script text-burgundy-deep text-3xl md:text-4xl mb-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ ...slowFade, delay: 0.7 }}
         >
-          في انتظاركم بشغف
+          Awaiting you with love
         </motion.h2>
 
         <motion.div
@@ -69,23 +59,23 @@ const FooterSection = () => {
         />
 
         <motion.p
-          className="font-display text-cream text-xl tracking-wider mb-2"
+          className="font-display text-burgundy text-xl tracking-wider mb-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ ...slowFade, delay: 1.2 }}
         >
-          مروة و يوسف
+          Yousef & Marwa
         </motion.p>
 
         <motion.p
-          className="font-body text-muted-foreground text-sm"
+          className="font-body text-burgundy-light text-sm"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ ...slowFade, delay: 1.4 }}
         >
-          ٢٠٢٦
+          2026
         </motion.p>
       </div>
     </footer>

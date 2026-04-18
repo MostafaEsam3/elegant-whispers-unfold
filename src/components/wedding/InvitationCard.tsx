@@ -18,10 +18,10 @@ const InvitationCard = () => {
               key={i}
               className={`absolute ${pos} w-6 h-6`}
               style={{
-                borderTop: i < 2 ? "2px solid hsl(40, 60%, 55%)" : "none",
-                borderBottom: i >= 2 ? "2px solid hsl(40, 60%, 55%)" : "none",
-                borderLeft: i % 2 === 0 ? "2px solid hsl(40, 60%, 55%)" : "none",
-                borderRight: i % 2 !== 0 ? "2px solid hsl(40, 60%, 55%)" : "none",
+                borderTop: i < 2 ? "2px solid hsl(40, 65%, 45%)" : "none",
+                borderBottom: i >= 2 ? "2px solid hsl(40, 65%, 45%)" : "none",
+                borderLeft: i % 2 === 0 ? "2px solid hsl(40, 65%, 45%)" : "none",
+                borderRight: i % 2 !== 0 ? "2px solid hsl(40, 65%, 45%)" : "none",
               }}
             />
           ))}
@@ -34,7 +34,7 @@ const InvitationCard = () => {
               viewport={{ once: true }}
               transition={{ ...slowFade, delay: 0.4 }}
             >
-              مروة و يوسف
+              Yousef & Marwa
             </motion.h2>
 
             <motion.div
@@ -52,9 +52,9 @@ const InvitationCard = () => {
               viewport={{ once: true }}
               transition={{ ...slowFade, delay: 1 }}
             >
-              بكل الحب والفرح، ندعوكم
+              With love and joy, we invite you
               <br />
-              لمشاركتنا أجمل يوم في حياتنا
+              to share the most beautiful day of our lives
             </motion.p>
 
             <motion.div
@@ -65,10 +65,10 @@ const InvitationCard = () => {
               transition={{ ...slowFade, delay: 1.3 }}
             >
               <p className="font-display text-burgundy-deep text-lg font-semibold tracking-wider">
-                ٦ مايو ٢٠٢٦
+                May 6, 2026
               </p>
               <p className="font-body text-burgundy-light text-base">
-                من الساعة ٥ مساءً حتى ١٢ منتصف الليل
+                From 5:00 PM until midnight
               </p>
             </motion.div>
 
@@ -80,7 +80,7 @@ const InvitationCard = () => {
               transition={{ ...slowFade, delay: 1.6 }}
             >
               <span className="text-gold text-xl">✦</span>
-              <p className="font-script text-burgundy text-xl">يشرفنا حضوركم</p>
+              <p className="font-script text-burgundy text-xl">Honored by your presence</p>
               <span className="text-gold text-xl">✦</span>
             </motion.div>
           </div>
