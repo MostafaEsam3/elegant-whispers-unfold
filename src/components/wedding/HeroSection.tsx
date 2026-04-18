@@ -1,28 +1,36 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import envelopeImg from "@/assets/envelope-hands.png";
 
 const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
   const [isOpened, setIsOpened] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleOpen = () => {
+    if (isOpened) return;
     setIsOpened(true);
+    if (audioRef.current) {
+      audioRef.current.volume = 0.7;
+      audioRef.current.play().catch(() => {});
+    }
     setTimeout(onOpen, 2200);
   };
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-burgundy-gradient relative overflow-hidden">
+      <audio ref={audioRef} src="/wedding-music.mp3" loop preload="auto" />
+
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute text-gold opacity-20"
+            className="absolute text-burgundy opacity-30"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               fontSize: `${8 + Math.random() * 16}px`,
             }}
-            animate={{ opacity: [0.1, 0.3, 0.1], scale: [0.8, 1.2, 0.8] }}
+            animate={{ opacity: [0.15, 0.4, 0.15], scale: [0.8, 1.2, 0.8] }}
             transition={{ duration: 4 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2 }}
           >
             ✦
@@ -32,12 +40,12 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
 
       <div className="relative z-10 flex flex-col items-center">
         <motion.h1
-          className="font-script text-gold text-4xl md:text-6xl mb-12 text-center"
+          className="font-script text-burgundy-deep text-4xl md:text-6xl mb-12 text-center"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 2, ease: "easeOut" }}
         >
-          أنتم مدعوون
+          You Are Invited
         </motion.h1>
 
         <motion.div
@@ -50,7 +58,7 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
         >
           <motion.img
             src={envelopeImg}
-            alt="ظرف زفاف ذهبي"
+            alt="Golden wedding envelope"
             className="w-64 md:w-80 h-auto drop-shadow-2xl"
             animate={isOpened ? { scale: 1.1, opacity: 0, y: -60 } : {}}
             transition={{ duration: 1.2, ease: "easeInOut" }}
@@ -64,9 +72,9 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
                 animate={{ y: -180, opacity: 1 }}
                 transition={{ duration: 1.4, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                <p className="font-script text-burgundy-deep text-2xl md:text-3xl">مروة و يوسف</p>
+                <p className="font-script text-burgundy-deep text-2xl md:text-3xl">Yousef & Marwa</p>
                 <div className="separator-ornament w-24 my-2" />
-                <p className="font-body text-burgundy text-sm">٦ . ٥ . ٢٠٢٦</p>
+                <p className="font-body text-burgundy text-sm">05 . 06 . 2026</p>
               </motion.div>
             )}
           </AnimatePresence>
@@ -75,14 +83,14 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
         <AnimatePresence>
           {!isOpened && (
             <motion.p
-              className="mt-10 font-body text-gold-light text-lg tracking-wider"
+              className="mt-10 font-body text-burgundy text-lg tracking-wider"
               initial={{ opacity: 0 }}
-              animate={{ opacity: [0.4, 1, 0.4] }}
+              animate={{ opacity: [0.5, 1, 0.5] }}
               exit={{ opacity: 0 }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               onClick={handleOpen}
             >
-              اضغط لفتح الدعوة
+              Tap to open the invitation
             </motion.p>
           )}
         </AnimatePresence>

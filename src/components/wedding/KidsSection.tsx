@@ -9,13 +9,13 @@ const KidsSection = () => {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute text-gold opacity-20 pointer-events-none"
+          className="absolute text-burgundy opacity-25 pointer-events-none"
           style={{
             left: `${15 + Math.random() * 70}%`,
             top: `${10 + Math.random() * 80}%`,
             fontSize: `${14 + Math.random() * 20}px`,
           }}
-          animate={{ y: [-10, 10, -10], opacity: [0.1, 0.3, 0.1], rotate: [-5, 5, -5] }}
+          animate={{ y: [-10, 10, -10], opacity: [0.15, 0.35, 0.15], rotate: [-5, 5, -5] }}
           transition={{ duration: 5 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2 }}
         >
           ♥
@@ -24,13 +24,13 @@ const KidsSection = () => {
 
       <div className="max-w-lg mx-auto text-center">
         <motion.h2
-          className="font-script text-gold text-3xl md:text-4xl mb-8"
+          className="font-script text-burgundy-deep text-3xl md:text-4xl mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={slowFade}
         >
-          قصتنا بدأت من زمان
+          Our story began long ago
         </motion.h2>
 
         <motion.div
@@ -41,27 +41,19 @@ const KidsSection = () => {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <div className="relative rounded-xl overflow-hidden gold-border gold-glow">
-            <img src={kidsPhoto} alt="مروة ويوسف في الطفولة" className="w-full h-auto" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/30 to-transparent" />
+            <img src={kidsPhoto} alt="Yousef and Marwa as children" className="w-full h-auto" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-burgundy-deep/20 to-transparent" />
           </div>
-
-          <motion.div
-            className="absolute -top-3 left-1/2 -translate-x-1/2 text-gold text-2xl"
-            animate={{ rotate: [-3, 3, -3] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            📌
-          </motion.div>
         </motion.div>
 
         <motion.p
-          className="mt-8 font-body text-cream text-lg leading-relaxed"
+          className="mt-8 font-body text-burgundy text-lg leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ ...slowFade, delay: 0.8 }}
         >
-          من أحلام الطفولة... إلى عُمرٍ سويّاً
+          From childhood dreams... to a lifetime together
         </motion.p>
       </div>
     </section>

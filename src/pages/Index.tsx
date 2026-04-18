@@ -13,7 +13,7 @@ const Index = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background" dir="rtl">
+    <div className="min-h-screen bg-background">
       <AnimatePresence mode="wait">
         {!envelopeOpened ? (
           <motion.div key="hero" exit={{ opacity: 0, y: -50 }} transition={{ duration: 1 }}>
