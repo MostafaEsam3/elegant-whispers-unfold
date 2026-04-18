@@ -18,30 +18,30 @@ const LocationSection = () => {
         </motion.h2>
 
         <motion.div
-          className="bg-cream rounded-xl p-8 gold-border gold-glow"
+          className="bg-burgundy-deep rounded-xl p-8 gold-border gold-glow"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ ...slowFade, delay: 0.4 }}
         >
           <motion.div
-            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-burgundy-deep mb-4"
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-cream mb-4"
             animate={{ y: [-3, 3, -3] }}
             transition={{ duration: 4, repeat: Infinity }}
           >
-            <MapPin className="w-8 h-8 text-gold" />
+            <MapPin className="w-8 h-8 text-burgundy-deep" />
           </motion.div>
 
-          <h3 className="font-display text-burgundy-deep text-2xl md:text-3xl font-bold mb-2">
+          <h3 className="font-display text-cream text-2xl md:text-3xl font-bold mb-2">
             Al Qasr
           </h3>
-          <p className="font-body text-burgundy text-lg mb-1">Wedding Hall</p>
-          <p className="font-body text-burgundy-light text-base">Sohag, Egypt</p>
+          <p className="font-body text-cream text-lg mb-1">Wedding Hall</p>
+          <p className="font-body text-cream/80 text-base">Sohag, Egypt</p>
 
           <div className="separator-ornament w-24 mx-auto my-6" />
 
           <motion.p
-            className="font-body text-burgundy text-sm leading-relaxed"
+            className="font-body text-cream text-sm leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    --background: 40 30% 96%;
+    --background: 36 27% 92%;
     --foreground: 0 45% 18%;
 
-    --card: 40 30% 98%;
+    --card: 36 27% 92%;
     --card-foreground: 0 45% 18%;
 
     --popover: 40 30% 98%;
@@ -97,7 +97,7 @@
   }
 
   .bg-burgundy-gradient {
-    background: linear-gradient(180deg, hsl(40 35% 97%), hsl(40 30% 94%), hsl(40 35% 97%));
+    background: #F1EDE4;
   }
 
   .gold-glow {

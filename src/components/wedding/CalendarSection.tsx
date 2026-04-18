@@ -38,7 +38,7 @@ const CalendarSection = () => {
         </motion.p>
 
         <motion.div
-          className="bg-cream rounded-lg p-6 gold-border gold-glow"
+          className="bg-burgundy-deep rounded-lg p-6 gold-border gold-glow"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -46,7 +46,7 @@ const CalendarSection = () => {
         >
           <div className="grid grid-cols-7 gap-1 mb-3">
             {DAYS.map((day) => (
-              <div key={day} className="text-center font-display text-burgundy-deep text-xs font-bold py-1">
+              <div key={day} className="text-center font-display text-cream text-xs font-bold py-1">
                 {day}
               </div>
             ))}
@@ -60,8 +60,8 @@ const CalendarSection = () => {
                     <span
                       className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-body text-sm transition-all
                         ${day === HIGHLIGHT_DAY
-                          ? "bg-burgundy-deep text-cream font-bold animate-glow-pulse"
-                          : "text-burgundy"
+                          ? "bg-gold text-burgundy-deep font-bold animate-glow-pulse"
+                          : "text-cream"
                         }`}
                     >
                       {day}

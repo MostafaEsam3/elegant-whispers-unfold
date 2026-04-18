@@ -24,13 +24,13 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
         {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute text-burgundy opacity-30"
+            className="absolute text-burgundy-deep"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              fontSize: `${8 + Math.random() * 16}px`,
+              fontSize: `${10 + Math.random() * 18}px`,
             }}
-            animate={{ opacity: [0.15, 0.4, 0.15], scale: [0.8, 1.2, 0.8] }}
+            animate={{ opacity: [0.4, 0.8, 0.4], scale: [0.8, 1.2, 0.8] }}
             transition={{ duration: 4 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2 }}
           >
             ✦
