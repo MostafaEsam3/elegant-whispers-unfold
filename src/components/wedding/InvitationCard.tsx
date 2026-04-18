@@ -12,23 +12,23 @@ const InvitationCard = () => {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 2, ease: "easeOut" }}
       >
-        <div className="bg-cream rounded-lg p-8 md:p-12 gold-glow gold-border relative">
+        <div className="bg-burgundy-deep rounded-lg p-8 md:p-12 gold-glow gold-border relative">
           {["top-3 left-3", "top-3 right-3", "bottom-3 left-3", "bottom-3 right-3"].map((pos, i) => (
             <div
               key={i}
               className={`absolute ${pos} w-6 h-6`}
               style={{
-                borderTop: i < 2 ? "2px solid hsl(40, 65%, 45%)" : "none",
-                borderBottom: i >= 2 ? "2px solid hsl(40, 65%, 45%)" : "none",
-                borderLeft: i % 2 === 0 ? "2px solid hsl(40, 65%, 45%)" : "none",
-                borderRight: i % 2 !== 0 ? "2px solid hsl(40, 65%, 45%)" : "none",
+                borderTop: i < 2 ? "2px solid hsl(40, 65%, 55%)" : "none",
+                borderBottom: i >= 2 ? "2px solid hsl(40, 65%, 55%)" : "none",
+                borderLeft: i % 2 === 0 ? "2px solid hsl(40, 65%, 55%)" : "none",
+                borderRight: i % 2 !== 0 ? "2px solid hsl(40, 65%, 55%)" : "none",
               }}
             />
           ))}
 
           <div className="text-center">
             <motion.h2
-              className="font-script text-burgundy-deep text-4xl md:text-5xl mb-2"
+              className="font-script text-cream text-4xl md:text-5xl mb-2"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -46,7 +46,7 @@ const InvitationCard = () => {
             />
 
             <motion.p
-              className="font-body text-burgundy text-lg md:text-xl leading-relaxed mb-6"
+              className="font-body text-cream text-lg md:text-xl leading-relaxed mb-6"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -64,10 +64,10 @@ const InvitationCard = () => {
               viewport={{ once: true }}
               transition={{ ...slowFade, delay: 1.3 }}
             >
-              <p className="font-display text-burgundy-deep text-lg font-semibold tracking-wider">
+              <p className="font-display text-cream text-lg font-semibold tracking-wider">
                 May 6, 2026
               </p>
-              <p className="font-body text-burgundy-light text-base">
+              <p className="font-body text-cream/80 text-base">
                 From 5:00 PM until midnight
               </p>
             </motion.div>
@@ -80,7 +80,7 @@ const InvitationCard = () => {
               transition={{ ...slowFade, delay: 1.6 }}
             >
               <span className="text-gold text-xl">✦</span>
-              <p className="font-script text-burgundy text-xl">Honored by your presence</p>
+              <p className="font-script text-cream text-xl">Honored by your presence</p>
               <span className="text-gold text-xl">✦</span>
             </motion.div>
           </div>
