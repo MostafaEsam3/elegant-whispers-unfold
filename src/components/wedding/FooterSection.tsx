@@ -8,7 +8,7 @@ const FooterSection = () => {
       {["✦", "☽", "✦", "✧", "✦"].map((char, i) => (
         <motion.div
           key={i}
-          className="absolute text-burgundy-deep pointer-events-none"
+          className="absolute text-cream/70 pointer-events-none"
           style={{
             left: `${10 + i * 20}%`,
             top: `${20 + (i % 2) * 40}%`,
@@ -40,7 +40,7 @@ const FooterSection = () => {
         </motion.div>
 
         <motion.h2
-          className="font-script text-burgundy-deep text-3xl md:text-4xl mb-4"
+          className="font-script text-cream text-3xl md:text-4xl mb-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -58,7 +58,7 @@ const FooterSection = () => {
         />
 
         <motion.p
-          className="font-display text-burgundy text-xl tracking-wider mb-2"
+          className="font-display text-cream text-xl tracking-wider mb-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -68,7 +68,7 @@ const FooterSection = () => {
         </motion.p>
 
         <motion.p
-          className="font-body text-burgundy-light text-sm"
+          className="font-body text-cream/70 text-sm"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

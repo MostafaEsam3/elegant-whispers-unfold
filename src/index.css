@@ -97,7 +97,7 @@
   }
 
   .bg-burgundy-gradient {
-    background: #F1EDE4;
+    background: linear-gradient(180deg, hsl(var(--burgundy-deep)) 0%, hsl(var(--burgundy)) 50%, hsl(var(--burgundy-deep)) 100%);
   }
 
   .gold-glow {

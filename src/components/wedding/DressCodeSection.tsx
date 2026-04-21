@@ -14,7 +14,7 @@ const DressCodeSection = () => {
     <section className="py-20 px-4 bg-burgundy-gradient relative">
       <div className="max-w-lg mx-auto text-center">
         <motion.h2
-          className="font-script text-burgundy-deep text-3xl md:text-4xl mb-4"
+          className="font-script text-cream text-3xl md:text-4xl mb-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -24,7 +24,7 @@ const DressCodeSection = () => {
         </motion.h2>
 
         <motion.p
-          className="font-body text-burgundy text-base mb-10 leading-relaxed"
+          className="font-body text-cream text-base mb-10 leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -53,7 +53,7 @@ const DressCodeSection = () => {
                 className="w-14 h-14 md:w-16 md:h-16 rounded-full gold-border shadow-lg transition-shadow duration-300 group-hover:shadow-[0_0_20px_hsl(40,65%,45%,0.5)]"
                 style={{ backgroundColor: `hsl(${color.hsl})` }}
               />
-              <span className="font-body text-burgundy text-xs">{color.name}</span>
+              <span className="font-body text-cream text-xs">{color.name}</span>
             </motion.div>
           ))}
         </motion.div>

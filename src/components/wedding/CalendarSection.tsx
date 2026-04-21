@@ -18,7 +18,7 @@ const CalendarSection = () => {
     <section className="py-20 px-4 bg-burgundy-gradient relative">
       <div className="max-w-sm mx-auto">
         <motion.h2
-          className="font-script text-burgundy-deep text-3xl md:text-4xl text-center mb-2"
+          className="font-script text-cream text-3xl md:text-4xl text-center mb-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,7 +28,7 @@ const CalendarSection = () => {
         </motion.h2>
 
         <motion.p
-          className="text-center font-display text-burgundy text-lg mb-8 tracking-widest"
+          className="text-center font-display text-cream text-lg mb-8 tracking-widest"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -74,7 +74,7 @@ const CalendarSection = () => {
         </motion.div>
 
         <motion.p
-          className="text-center mt-6 font-script text-burgundy text-xl"
+          className="text-center mt-6 font-script text-cream text-xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
