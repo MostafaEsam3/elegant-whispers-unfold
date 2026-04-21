@@ -1,24 +1,18 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import envelopeImg from "@/assets/envelope-hands.png";
 
 const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
   const [isOpened, setIsOpened] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleOpen = () => {
     if (isOpened) return;
     setIsOpened(true);
-    if (audioRef.current) {
-      audioRef.current.volume = 0.7;
-      audioRef.current.play().catch(() => {});
-    }
     setTimeout(onOpen, 2200);
   };
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-burgundy-gradient relative overflow-hidden">
-      <audio ref={audioRef} src="/wedding-music.mp3" loop preload="auto" />
 
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => (
