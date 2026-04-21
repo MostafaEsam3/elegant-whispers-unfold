@@ -9,7 +9,7 @@ const KidsSection = () => {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute text-cream/70 pointer-events-none"
+          className="absolute text-gold/70 pointer-events-none"
           style={{
             left: `${15 + Math.random() * 70}%`,
             top: `${10 + Math.random() * 80}%`,

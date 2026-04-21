@@ -8,7 +8,7 @@ const FooterSection = () => {
       {["✦", "☽", "✦", "✧", "✦"].map((char, i) => (
         <motion.div
           key={i}
-          className="absolute text-cream/70 pointer-events-none"
+          className="absolute text-gold/70 pointer-events-none"
           style={{
             left: `${10 + i * 20}%`,
             top: `${20 + (i % 2) * 40}%`,
