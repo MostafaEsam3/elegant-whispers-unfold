@@ -15,8 +15,24 @@ const slowFade = { duration: 1.8, ease: "easeOut" as const };
 
 const CalendarSection = () => {
   return (
-    <section className="py-20 px-4 bg-burgundy-gradient relative">
-      <div className="max-w-sm mx-auto">
+    <section className="py-20 px-4 bg-burgundy-gradient relative overflow-hidden">
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute text-gold/70 pointer-events-none"
+          style={{
+            left: `${10 + Math.random() * 80}%`,
+            top: `${10 + Math.random() * 80}%`,
+            fontSize: `${12 + Math.random() * 16}px`,
+          }}
+          animate={{ opacity: [0.3, 0.7, 0.3], scale: [0.9, 1.1, 0.9] }}
+          transition={{ duration: 4 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2 }}
+        >
+          ✦
+        </motion.div>
+      ))}
+
+      <div className="max-w-sm mx-auto relative z-10">
         <motion.h2
           className="font-script text-cream text-3xl md:text-4xl text-center mb-2"
           initial={{ opacity: 0, y: 20 }}

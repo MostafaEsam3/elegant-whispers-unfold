@@ -18,7 +18,7 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
         {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute text-cream"
+            className="absolute text-gold/70"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
