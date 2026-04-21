@@ -99,7 +99,12 @@ const RsvpSection = () => {
       timestamp: new Date().toISOString(),
     };
     localStorage.setItem('wedding-rsvp', JSON.stringify(rsvpData));
+    // Preserve scroll position so the page doesn't jump
+    const scrollY = window.scrollY;
     setIsSubmitted(true);
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: scrollY, behavior: 'auto' });
+    });
   };
 
   const getResponseMessage = () => {
