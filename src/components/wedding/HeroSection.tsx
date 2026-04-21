@@ -24,7 +24,7 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
         {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute text-burgundy-deep"
+            className="absolute text-cream"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -40,7 +40,7 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
 
       <div className="relative z-10 flex flex-col items-center">
         <motion.h1
-          className="font-script text-burgundy-deep text-4xl md:text-6xl mb-12 text-center"
+          className="font-script text-cream text-4xl md:text-6xl mb-12 text-center"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 2, ease: "easeOut" }}
@@ -83,7 +83,7 @@ const HeroSection = ({ onOpen }: { onOpen: () => void }) => {
         <AnimatePresence>
           {!isOpened && (
             <motion.p
-              className="mt-10 font-body text-burgundy text-lg tracking-wider"
+              className="mt-10 font-body text-cream text-lg tracking-wider"
               initial={{ opacity: 0 }}
               animate={{ opacity: [0.5, 1, 0.5] }}
               exit={{ opacity: 0 }}

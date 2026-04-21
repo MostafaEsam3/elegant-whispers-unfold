@@ -9,7 +9,7 @@ const KidsSection = () => {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute text-burgundy-deep pointer-events-none"
+          className="absolute text-cream/70 pointer-events-none"
           style={{
             left: `${15 + Math.random() * 70}%`,
             top: `${10 + Math.random() * 80}%`,
@@ -24,7 +24,7 @@ const KidsSection = () => {
 
       <div className="max-w-lg mx-auto text-center">
         <motion.h2
-          className="font-script text-burgundy-deep text-3xl md:text-4xl mb-8"
+          className="font-script text-cream text-3xl md:text-4xl mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -47,7 +47,7 @@ const KidsSection = () => {
         </motion.div>
 
         <motion.p
-          className="mt-8 font-body text-burgundy text-lg leading-relaxed"
+          className="mt-8 font-body text-cream text-lg leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
